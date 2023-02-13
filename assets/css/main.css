@@ -2189,3 +2189,41 @@ input, select, textarea {
 			}
 
 		}
+
+/*    Projects     */
+.projects{
+	display: flex;
+	flex-direction: column;
+	gap:10px
+}
+
+.image-container{
+	display: inline-block;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.single-image:hover{
+	opacity: 0.7;
+	transition: 0.5s;
+	background-color: #444444;
+	  
+}
+/* .transparent .single-image:hover{
+	background-color: rgba(88, 86, 86, 0.5);
+} */
+
+.imgtext{
+  display: none;
+  color: black;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.imgtext:hover{
+	display: block;
+}
+
+.image-container:hover .imgtext {
+	display: block;
+  }
