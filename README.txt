@@ -1,1 +1,1 @@
-[Portfolio](https://yelnadi.github.io/yelnadi.github.io/)
+[Portfolio](https://yelnadi.github.io/)
