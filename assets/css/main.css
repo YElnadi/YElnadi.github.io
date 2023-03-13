@@ -2242,7 +2242,7 @@ input, select, textarea {
 	color: #fff;
 	visibility: hidden;
 	opacity: 0;
-	height: 415px;
+	height: auto;
   
 	/* transition effect. not necessary */
 	transition: opacity .2s, visibility .2s;
