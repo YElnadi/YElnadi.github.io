@@ -2200,7 +2200,7 @@ input, select, textarea {
  .image-container{
   display: inline-block;
   position: relative;
-  height:80%
+  
 }
 
 /* .single-image:hover{
