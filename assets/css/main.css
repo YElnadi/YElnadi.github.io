@@ -3546,3 +3546,41 @@ input, select, textarea {
 }
 
 
+#header {
+    text-align: center; /* Center-align text and elements within the section */
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.inner p {
+    margin-bottom: 10px; /* Space between the paragraph and the icons */
+}
+
+.icons {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0; /* Add space above and below the icons */
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+}
+
+.icons li {
+    margin: 0 10px; /* Space between individual icons */
+}
+
+.copyright,
+.actions.special {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0; /* Space above and below these sections */
+}
+
+.actions.special .button {
+    margin: 0 10px; /* Space between buttons if needed */
+}
