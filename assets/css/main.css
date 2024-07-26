@@ -3031,7 +3031,7 @@ input, select, textarea {
 			#header .actions:after {
 				background: #ffffff;
 				content: '';
-				height: 100vh;
+				height: 100vh; 
 				left: 50%;
 				position: absolute;
 				top: 100%;
@@ -3510,3 +3510,39 @@ input, select, textarea {
 			}
 
 	}
+
+
+	.align-button {
+		display: flex;
+		justify-content: center;
+		margin-top: 100px; /* Adjust as needed for spacing */
+	}
+	
+
+	/* Apply flexbox to the row container only within the #three section */
+#three .row {
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+	margin-top: 50px;
+    gap: 100px; /* Adds spacing between the items */
+}
+
+/* Ensure that each project takes up the same amount of space */
+#three .project {
+    flex: 1;
+    max-width: 300px; /* Adjust this value to control the width of each project */
+    text-align: center; /* Center text inside the project containers */
+}
+
+/* Optional: Add media queries for responsiveness */
+@media (max-width: 768px) {
+    #three .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    #three .project {
+        max-width: none;
+    }
+}
+
+
