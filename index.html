@@ -1,464 +1,547 @@
-<!DOCTYPE HTML>
-<!--
-	Photon by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Yasmine Elnadi - Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yasmine Elnadi — Full-Stack Software Developer building polished web and AI-powered applications." />
+  <title>Yasmine Elnadi | Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f3ed;
+      --surface: #ffffff;
+      --surface-2: #ebe6dc;
+      --text: #16202a;
+      --muted: #66717c;
+      --line: #dcd6cb;
+      --accent: #214f45;
+      --accent-soft: #dce8e3;
+      --ink: #0f1720;
+      --shadow: 0 18px 55px rgba(22, 32, 42, 0.08);
+      --radius: 24px;
+    }
 
-		<!-- Header -->
-			<section id="header">
-				<div class="inner">
-					<span class="icon solid major fa-cloud"></span>
-					<h1>Hi, I'm <strong>Yasmine Elnadi</strong><br />
-					</h1>
-					<p>I'm a full stack software developer passionet about creating scalable and efficient web applications. <br />
-					</p>
-					<ul class="actions special">
-						<li><a href="#one" class="button scrolly">Discover</a></li>
-					</ul>
-				</div>
-			</section>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-		<!-- One -->
-			<section id="one" class="main style1">
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>About me<br />
-								</h2>
-							</header>
-							<p>I am a Full-Stack Developer with experience in various technologies including React, Redux, Python, Flask, and more. I enjoy building applications that are both user-friendly and highly functional.</p>
-						</div>
-						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="images/pic1.jpg" alt="" /></span>
-						</div>
-					</div>
-				</div>
-			</section>
+    .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 
-		<!-- Two -->
-			<section id="two" class="main style2">
-				<div class="container">
-							<header class="major">
-								<h2>Skills and Technologies</h2>
-							</header>
-							<ul class="major-icons">
-								<li><spam><img src="images/react.png" alt="react" class="icon solid style3 major fa-camera-retro"></span></li>
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(246, 243, 237, .88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(220, 214, 203, .8);
+    }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: .94rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--text); }
 
-								<li><span> <img src ='images/python1.jpg' alt ='python' class="icon solid style4 major fa-cog"></span></li>
-								
-								<li><span class="icon solid style5 major fa-desktop"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: .2s ease;
+    }
+    .button.primary {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: white;
+    }
+    .button:hover { transform: translateY(-2px); }
 
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      padding: 80px 0 56px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .78rem;
+    }
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      letter-spacing: -.045em;
+      line-height: 1.08;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: clamp(3.3rem, 7vw, 6.8rem);
+      margin-bottom: 24px;
+    }
+    .hero-copy {
+      max-width: 720px;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-		<!-- Three -->
-			<section id="three" class="main style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>Adipiscing amet consequat</h2>
-					</header>
-					<p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
-					<div class="row gtr-150">
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
+    .portrait-wrap {
+      position: relative;
+      justify-self: end;
+      width: min(100%, 330px);
+    }
+    .portrait-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -18px 18px 18px -18px;
+      border-radius: 32px;
+      background: var(--accent-soft);
+      z-index: -1;
+    }
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
 
-		<!-- Four -->
-			<section id="four" class="main style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Ipsum feugiat consequat?</h2>
-					</header>
-					<p>Sed lacus nascetur ac ante amet sapien.</p>
-					<ul class="actions special">
-						<li><a href="#" class="button wide primary">Sign Up</a></li>
-						<li><a href="#" class="button wide">Learn More</a></li>
-					</ul>
-				</div>
-			</section>
+    section { padding: 100px 0; }
+    .section-top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+    .section-top h2 {
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      margin-bottom: 0;
+    }
+    .section-note { max-width: 480px; color: var(--muted); }
 
-		<!-- Five -->
-		<!--
-			<section id="five" class="main style1">
-				<div class="container">
-					<header class="major special">
-						<h2>Elements</h2>
-					</header>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    .about-card h3 { font-size: 1.45rem; margin-bottom: 12px; }
+    .about-card p { color: var(--muted); margin-bottom: 0; }
 
-					<section>
-						<h4>Text</h4>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<header>
-							<h4>Heading with a Subtitle</h4>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<header>
-							<h5>Heading with a Subtitle</h5>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h5>Blockquote</h5>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h5>Preformatted</h5>
-						<pre><code>i = 0;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .skill-group {
+      border-top: 2px solid var(--text);
+      padding-top: 18px;
+    }
+    .skill-group h3 {
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+    }
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.55);
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 600;
+    }
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+    .projects {
+      background: var(--ink);
+      color: #f7f8f9;
+    }
+    .projects .section-note { color: #a8b1ba; }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .project-card {
+      min-height: 340px;
+      border-radius: 28px;
+      padding: 32px;
+      background: #17222c;
+      border: 1px solid #2a3640;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #5d716d;
+    }
+    .project-kicker {
+      color: #91b7ac;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .74rem;
+      font-weight: 800;
+    }
+    .project-card h3 {
+      font-size: 2rem;
+      margin: 12px 0 12px;
+    }
+    .project-card p {
+      color: #b8c0c7;
+      max-width: 550px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0 26px;
+    }
+    .project-tags span {
+      font-size: .8rem;
+      border: 1px solid #3b4853;
+      color: #ced4d8;
+      padding: 6px 9px;
+      border-radius: 999px;
+    }
+    .project-link {
+      font-weight: 800;
+      color: white;
+    }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
+    .experience-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 50px;
+    }
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .timeline-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .timeline-item:first-child { padding-top: 0; }
+    .timeline-item h3 { font-size: 1.25rem; margin-bottom: 4px; }
+    .timeline-meta { color: var(--accent); font-weight: 700; font-size: .9rem; margin-bottom: 10px; }
+    .timeline-item p { color: var(--muted); margin: 0; }
 
-					<section>
-						<h4>Lists</h4>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<h5>Unordered</h5>
-								<ul>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-								<h5>Alternate</h5>
-								<ul class="alt">
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<h5>Ordered</h5>
-								<ol>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis viverra.</li>
-									<li>Felis enim feugiat.</li>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis lorem.</li>
-									<li>Felis enim et feugiat.</li>
-								</ol>
-								<h5>Icons</h5>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<h5>Actions</h5>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<ul class="actions">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions small">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary fit">Default</a></li>
-									<li><a href="#" class="button fit">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small fit">Small</a></li>
-									<li><a href="#" class="button small fit">Small</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+    .contact-card {
+      background: var(--accent);
+      color: white;
+      border-radius: 32px;
+      padding: clamp(34px, 6vw, 72px);
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 40px;
+      align-items: end;
+    }
+    .contact-card h2 {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      margin-bottom: 18px;
+    }
+    .contact-card p { color: #d4e2de; max-width: 650px; }
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .contact-card .button {
+      border-color: rgba(255,255,255,.45);
+      color: white;
+    }
+    .contact-card .button.primary {
+      background: white;
+      border-color: white;
+      color: var(--accent);
+    }
 
-					<section>
-						<h4>Table</h4>
-						<h5>Default</h5>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
+    footer {
+      padding: 26px 0 40px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-						<h5>Alternate</h5>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .experience-grid, .contact-card { grid-template-columns: 1fr; }
+      .portrait-wrap { justify-self: start; width: 260px; margin-top: 20px; }
+      .skills-grid, .project-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-actions { justify-content: flex-start; }
+    }
 
-					<section>
-						<h4>Buttons</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button large">Large</a></li>
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions fit">
-							<li><a href="#" class="button fit">Fit</a></li>
-							<li><a href="#" class="button primary fit">Fit</a></li>
-							<li><a href="#" class="button fit">Fit</a></li>
-						</ul>
-						<ul class="actions fit small">
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-							<li><a href="#" class="button fit small">Fit + Small</a></li>
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 26px, 1120px); }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { min-height: auto; padding-top: 58px; }
+      section { padding: 76px 0; }
+      h1 { font-size: clamp(3rem, 16vw, 4.8rem); }
+      .skills-grid, .project-grid { grid-template-columns: 1fr; }
+      .section-top { display: block; }
+      .section-note { margin-top: 18px; }
+      .project-card { min-height: 310px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="shell nav-inner">
+      <a class="brand" href="#top">Yasmine Elnadi</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a class="button nav-cta" href="https://github.com/YElnadi" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </nav>
 
-					<section>
-						<h4>Form</h4>
-						<form method="post" action="#">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-6 col-12-xsmall">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="col-12">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
+  <main id="top">
+    <header class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Full-Stack Software Developer</p>
+          <h1>I build useful, thoughtful digital products.</h1>
+          <p class="hero-copy">
+            I’m Yasmine Elnadi, a full-stack developer working across React, JavaScript, Python, Node.js, databases, testing, and AI-powered experiences. I enjoy turning ideas into clean, practical products people can actually use.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View selected work ↓</a>
+            <a class="button" href="https://www.linkedin.com/in/yaselnadi" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="portrait-wrap">
+          <img class="portrait" src="images/pic1.jpg" alt="Portrait of Yasmine Elnadi" />
+        </div>
+      </div>
+    </header>
 
-					<section>
-						<h4>Image</h4>
-						<h5>Fit</h5>
-						<div class="box alt">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-12"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-							</div>
-						</div>
-						<h5>Left &amp; Right</h5>
-						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-					</section>
+    <section id="about">
+      <div class="shell">
+        <div class="section-top">
+          <h2>About me</h2>
+          <p class="section-note">
+            I care about usable interfaces, solid engineering fundamentals, clear communication, and learning by building.
+          </p>
+        </div>
 
-				</div>
-			</section>
-		-->
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Product-minded engineering</h3>
+            <p>
+              My background spans front-end and back-end development, relational databases, cloud storage, testing, and API integration. I like owning the full path from an idea to a working user experience.
+            </p>
+          </article>
+          <article class="about-card">
+            <h3>Always exploring</h3>
+            <p>
+              Alongside traditional web development, I’ve built projects around generative AI and conversational experiences, and I continue exploring how AI can make software more useful without making it more complicated.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-		<!-- Footer -->
-			<section id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</section>
+    <section id="skills">
+      <div class="shell">
+        <div class="section-top">
+          <h2>Toolkit</h2>
+          <p class="section-note">A practical mix of technologies I’ve used to design, build, test, and ship software.</p>
+        </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <div class="skill-list">
+              <span class="chip">React</span><span class="chip">Redux</span><span class="chip">Next.js</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">HTML/CSS</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Backend</h3>
+            <div class="skill-list">
+              <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">REST APIs</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Data & Cloud</h3>
+            <div class="skill-list">
+              <span class="chip">PostgreSQL</span><span class="chip">SQLAlchemy</span><span class="chip">Prisma</span><span class="chip">AWS S3</span><span class="chip">Firebase</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Testing & AI</h3>
+            <div class="skill-list">
+              <span class="chip">Cypress</span><span class="chip">OpenAI APIs</span><span class="chip">Gemini API</span><span class="chip">Git/GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	</body>
+    <section class="projects" id="work">
+      <div class="shell">
+        <div class="section-top">
+          <h2>Selected work</h2>
+          <p class="section-note">A mix of full-stack applications and newer AI experiments that show how my work has evolved.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div>
+              <span class="project-kicker">Full-stack application</span>
+              <h3>DishDiva</h3>
+              <p>A recipe-focused web application with a React/Redux front end and Flask/Python back end, built around creating and managing cooking content with image support.</p>
+              <div class="project-tags"><span>React</span><span>Redux</span><span>Flask</span><span>Python</span><span>PostgreSQL</span><span>AWS S3</span></div>
+            </div>
+            <a class="project-link" href="https://github.com/YElnadi/DishDiva" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <span class="project-kicker">Full-stack application</span>
+              <h3>Yasbnb</h3>
+              <p>A vacation-rental marketplace project focused on real-world CRUD flows, user-facing listings, authentication, and full-stack application architecture.</p>
+              <div class="project-tags"><span>React</span><span>Redux</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span></div>
+            </div>
+            <a class="project-link" href="https://github.com/YElnadi/Yasbnb" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <span class="project-kicker">AI project</span>
+              <h3>Customer Support AI</h3>
+              <p>An AI-focused application exploring conversational customer-support experiences and practical integration of modern language-model tooling into a web product.</p>
+              <div class="project-tags"><span>AI</span><span>JavaScript</span><span>Web App</span><span>LLM Integration</span></div>
+            </div>
+            <a class="project-link" href="https://github.com/YElnadi/customer-support-ai" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <span class="project-kicker">AI experiment</span>
+              <h3>Gemini Chatbot</h3>
+              <p>A hands-on exploration of Google Gemini models and prompt-driven conversational experiences using JavaScript and the Gemini API.</p>
+              <div class="project-tags"><span>Gemini</span><span>JavaScript</span><span>Generative AI</span><span>API Integration</span></div>
+            </div>
+            <a class="project-link" href="https://github.com/YElnadi/Gemini_Chatbot" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="shell experience-grid">
+        <div>
+          <p class="eyebrow">Experience & growth</p>
+          <h2>Building, teaching, and learning.</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Software Developer</h3>
+            <div class="timeline-meta">Independent projects · Full-stack & AI</div>
+            <p>Building web applications across React, Node, Python, databases, APIs, testing, and AI-powered workflows.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Coding Instructor</h3>
+            <div class="timeline-meta">Coding With Kids · Woodinville Montessori School</div>
+            <p>Taught young learners core coding concepts through approachable, hands-on programming activities and projects.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>AI Fellowship</h3>
+            <div class="timeline-meta">Headstarter AI</div>
+            <p>Built AI-focused projects in a fast-paced fellowship environment centered on shipping, experimentation, and product thinking.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Software Engineering Training</h3>
+            <div class="timeline-meta">App Academy</div>
+            <p>Completed intensive full-stack software engineering training covering modern JavaScript, React, backend development, databases, and deployment fundamentals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="shell">
+        <div class="contact-card">
+          <div>
+            <p class="eyebrow" style="color:#d4e2de">Let’s connect</p>
+            <h2>Interested in working together?</h2>
+            <p>I’m always interested in thoughtful software, product, and engineering opportunities where I can keep building and growing.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button primary" href="https://www.linkedin.com/in/yaselnadi" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="button" href="https://github.com/YElnadi" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>© 2026 Yasmine Elnadi</span>
+      <span>Designed & built with care.</span>
+    </div>
+  </footer>
+</body>
 </html>
