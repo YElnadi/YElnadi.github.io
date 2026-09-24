@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yasmine Elnadi — Full-Stack Software Developer building polished web and AI-powered applications." />
-  <title>Yasmine Elnadi | Full-Stack Developer</title>
+  <meta name="description" content="Yasmine Elnadi — software engineer and researcher building and evaluating LLM applications, with peer-reviewed work on fault-tolerant systems." />
+  <title>Yasmine Elnadi | Software Engineer & Researcher</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -176,6 +176,34 @@
     .about-card h3 { font-size: 1.45rem; margin-bottom: 12px; }
     .about-card p { color: var(--muted); margin-bottom: 0; }
 
+    /* Research */
+    #research { background: var(--surface-2); }
+    .research-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .thesis-title { font-style: italic; color: var(--text) !important; margin: 0 0 12px; }
+    .pub-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+    .pub {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 24px;
+    }
+    .pub-venue {
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .72rem;
+    }
+    .pub h3 { font-size: 1.12rem; letter-spacing: -.02em; line-height: 1.3; margin: 6px 0 6px; }
+    .pub p { color: var(--muted); font-size: .92rem; margin: 0 0 8px; }
+    .pub a { font-weight: 700; color: var(--accent); font-size: .92rem; }
+    .pub a:hover { text-decoration: underline; }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -257,10 +285,12 @@
       padding: 6px 9px;
       border-radius: 999px;
     }
+    .project-links { display: flex; gap: 22px; flex-wrap: wrap; }
     .project-link {
       font-weight: 800;
       color: white;
     }
+    .project-link:hover { color: #91b7ac; }
 
     .experience-grid {
       display: grid;
@@ -324,7 +354,7 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid, .about-grid, .experience-grid, .contact-card { grid-template-columns: 1fr; }
+      .hero-grid, .about-grid, .research-grid, .experience-grid, .contact-card { grid-template-columns: 1fr; }
       .portrait-wrap { justify-self: start; width: 260px; margin-top: 20px; }
       .skills-grid, .project-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-actions { justify-content: flex-start; }
@@ -349,9 +379,10 @@
       <a class="brand" href="#top">Yasmine Elnadi</a>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#research">Research</a>
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
-        <a class="button nav-cta" href="https://github.com/YElnadi" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="button nav-cta" href="Yasmine_Elnadi_Resume.pdf" target="_blank" rel="noreferrer">Résumé ↗</a>
       </div>
     </div>
   </nav>
@@ -360,14 +391,15 @@
     <header class="hero">
       <div class="shell hero-grid">
         <div>
-          <p class="eyebrow">Full-Stack Software Developer</p>
-          <h1>I build useful, thoughtful digital products.</h1>
+          <p class="eyebrow">Software Engineer & Researcher</p>
+          <h1>I build and evaluate AI systems people can rely on.</h1>
           <p class="hero-copy">
-            I’m Yasmine Elnadi, a full-stack developer working across React, JavaScript, Python, Node.js, databases, testing, and AI-powered experiences. I enjoy turning ideas into clean, practical products people can actually use.
+            I’m Yasmine Elnadi. I hold an M.S. in Electronics & Communications Engineering with three peer-reviewed papers on fault-tolerant networked systems, and I build and evaluate LLM applications in Python and TypeScript. Most recently I reviewed and graded AI-generated code as an AI code trainer at Outlier.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#work">View selected work ↓</a>
-            <a class="button" href="https://www.linkedin.com/in/yaselnadi" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="button" href="Yasmine_Elnadi_Resume.pdf" target="_blank" rel="noreferrer">Download résumé</a>
+            <a class="button" href="mailto:yaselnadi@gmail.com">Email me</a>
           </div>
         </div>
         <div class="portrait-wrap">
@@ -381,23 +413,63 @@
         <div class="section-top">
           <h2>About me</h2>
           <p class="section-note">
-            I care about usable interfaces, solid engineering fundamentals, clear communication, and learning by building.
+            I care about rigorous thinking, solid engineering fundamentals, clear communication, and learning by building.
           </p>
         </div>
 
         <div class="about-grid">
           <article class="about-card">
-            <h3>Product-minded engineering</h3>
+            <h3>Research-trained engineering</h3>
             <p>
-              My background spans front-end and back-end development, relational databases, cloud storage, testing, and API integration. I like owning the full path from an idea to a working user experience.
+              My graduate research focused on how systems fail: I modeled failure scenarios, simulated fault-tolerant architectures, and measured the tradeoff between cost and availability. I bring that same habit of testing assumptions and measuring outcomes to the software I build.
             </p>
           </article>
           <article class="about-card">
-            <h3>Always exploring</h3>
+            <h3>Building and evaluating LLMs</h3>
             <p>
-              Alongside traditional web development, I’ve built projects around generative AI and conversational experiences, and I continue exploring how AI can make software more useful without making it more complicated.
+              I’ve built LLM-powered apps with the OpenAI and Gemini APIs, and as an AI code trainer I evaluated model-generated code for correctness and instruction-following, writing the feedback used to improve it. I’m especially interested in making AI systems more reliable and trustworthy.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="shell">
+        <div class="section-top">
+          <h2>Research</h2>
+          <p class="section-note">Peer-reviewed work on fault tolerance, reliability, and cost/availability tradeoffs in networked control systems.</p>
+        </div>
+
+        <div class="research-grid">
+          <article class="about-card">
+            <p class="eyebrow">M.S. Thesis · The American University in Cairo · 2022</p>
+            <p class="thesis-title">Fault Tolerance for Access Point Failures in Smart Greenhouse Networked Control Systems</p>
+            <p>
+              Designed and simulated a fault-tolerant wireless-sensor-network control architecture in Riverbed Modeler that keeps operating through single and double access-point failures, then quantified the tradeoff between the cost of redundant infrastructure and the financial impact of downtime.
+            </p>
+          </article>
+
+          <ul class="pub-list">
+            <li class="pub">
+              <span class="pub-venue">IEEE ECAI · 2022</span>
+              <h3>Effects of Supply Chain Volatility on Smart Greenhouses: Balancing Cost & System Availability</h3>
+              <p><strong>Elnadi, Y.</strong>, Refaat, T. K., Daoud, R. M., Amer, H. H., & Ali, N. A.</p>
+              <a href="https://ieeexplore.ieee.org/document/9847506" target="_blank" rel="noreferrer">Read on IEEE Xplore ↗</a>
+            </li>
+            <li class="pub">
+              <span class="pub-venue">IEEE EUROCON · 2021</span>
+              <h3>Fault Tolerance for Access Point Failures in Smart Greenhouse Networked Control Systems</h3>
+              <p><strong>Elnadi, Y.</strong>, Refaat, T. K., Daoud, R. M., & Amer, H. H. · pp. 290–295</p>
+              <a href="https://doi.org/10.1109/EUROCON52738.2021.9535545" target="_blank" rel="noreferrer">Read paper ↗</a>
+            </li>
+            <li class="pub">
+              <span class="pub-venue">SN Applied Sciences (Springer) · 2019</span>
+              <h3>A Layered IoT Architecture for Greenhouse Monitoring and Remote Control</h3>
+              <p>Ibrahim, H., Mostafa, N., Halawa, H., Elsalamouny, M., Daoud, R. M., Amer, H. H., <strong>Adel, Y.</strong>, Shaarawi, A., Khattab, A., & ElSayed, H.</p>
+              <a href="https://doi.org/10.1007/s42452-019-0227-8" target="_blank" rel="noreferrer">Read paper ↗</a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -406,32 +478,32 @@
       <div class="shell">
         <div class="section-top">
           <h2>Toolkit</h2>
-          <p class="section-note">A practical mix of technologies I’ve used to design, build, test, and ship software.</p>
+          <p class="section-note">The languages, frameworks, and methods I use to research, build, test, and ship.</p>
         </div>
 
         <div class="skills-grid">
           <div class="skill-group">
-            <h3>Frontend</h3>
+            <h3>Languages</h3>
             <div class="skill-list">
-              <span class="chip">React</span><span class="chip">Redux</span><span class="chip">Next.js</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">HTML/CSS</span>
+              <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">C/C++</span><span class="chip">SQL</span><span class="chip">HTML/CSS</span>
             </div>
           </div>
           <div class="skill-group">
-            <h3>Backend</h3>
+            <h3>AI & Evaluation</h3>
             <div class="skill-list">
-              <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">REST APIs</span>
+              <span class="chip">OpenAI API</span><span class="chip">Gemini API</span><span class="chip">LLM output evaluation</span><span class="chip">Prompt design</span><span class="chip">Streaming responses</span>
             </div>
           </div>
           <div class="skill-group">
-            <h3>Data & Cloud</h3>
+            <h3>Research & Modeling</h3>
             <div class="skill-list">
-              <span class="chip">PostgreSQL</span><span class="chip">SQLAlchemy</span><span class="chip">Prisma</span><span class="chip">AWS S3</span><span class="chip">Firebase</span>
+              <span class="chip">Discrete-event simulation</span><span class="chip">Riverbed Modeler</span><span class="chip">Failure modeling</span><span class="chip">Reliability analysis</span>
             </div>
           </div>
           <div class="skill-group">
-            <h3>Testing & AI</h3>
+            <h3>Web, Data & Tools</h3>
             <div class="skill-list">
-              <span class="chip">Cypress</span><span class="chip">OpenAI APIs</span><span class="chip">Gemini API</span><span class="chip">Git/GitHub</span>
+              <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Flask</span><span class="chip">PostgreSQL</span><span class="chip">AWS S3</span><span class="chip">Docker</span><span class="chip">Cypress</span><span class="chip">Git</span>
             </div>
           </div>
         </div>
@@ -442,48 +514,58 @@
       <div class="shell">
         <div class="section-top">
           <h2>Selected work</h2>
-          <p class="section-note">A mix of full-stack applications and newer AI experiments that show how my work has evolved.</p>
+          <p class="section-note">AI applications and full-stack products, built and tested end to end.</p>
         </div>
 
         <div class="project-grid">
           <article class="project-card">
             <div>
+              <span class="project-kicker">AI application</span>
+              <h3>Live-Translator</h3>
+              <p>A full-stack chat app that translates messages between users in real time using the Google Gen AI API, with Cypress end-to-end tests covering the core chat flow.</p>
+              <div class="project-tags"><span>React</span><span>TypeScript</span><span>Zustand</span><span>Tailwind</span><span>Express</span><span>Google Gen AI</span><span>Cypress</span></div>
+            </div>
+            <div class="project-links">
+              <!-- TODO: replace with the exact repo URL, and add a Live demo link if it's deployed -->
+              <a class="project-link" href="https://github.com/YElnadi" target="_blank" rel="noreferrer">View repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <span class="project-kicker">AI application · Headstarter AI</span>
+              <h3>Customer Support AI</h3>
+              <p>An AI support chatbot that uses the OpenAI API to give streaming, context-aware answers, built and shipped during the Headstarter AI Fellowship.</p>
+              <div class="project-tags"><span>Next.js</span><span>React</span><span>OpenAI API</span><span>Streaming</span></div>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/YElnadi/customer-support-ai" target="_blank" rel="noreferrer">View repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div>
               <span class="project-kicker">Full-stack application</span>
               <h3>DishDiva</h3>
-              <p>A recipe-focused web application with a React/Redux front end and Flask/Python back end, built around creating and managing cooking content with image support.</p>
-              <div class="project-tags"><span>React</span><span>Redux</span><span>Flask</span><span>Python</span><span>PostgreSQL</span><span>AWS S3</span></div>
+              <p>A recipe-sharing platform with a React/Redux front end and Flask/Python back end, featuring authentication, full CRUD, and AWS S3 image uploads.</p>
+              <div class="project-tags"><span>React</span><span>Redux</span><span>Flask</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>AWS S3</span></div>
             </div>
-            <a class="project-link" href="https://github.com/YElnadi/DishDiva" target="_blank" rel="noreferrer">View repository ↗</a>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/YElnadi/DishDiva" target="_blank" rel="noreferrer">View repository ↗</a>
+              <!-- TODO: add your Render URL:  <a class="project-link" href="https://YOUR-APP.onrender.com" target="_blank" rel="noreferrer">Live demo ↗</a> -->
+            </div>
           </article>
 
           <article class="project-card">
             <div>
               <span class="project-kicker">Full-stack application</span>
               <h3>Yasbnb</h3>
-              <p>A vacation-rental marketplace project focused on real-world CRUD flows, user-facing listings, authentication, and full-stack application architecture.</p>
+              <p>A vacation-rental marketplace with user listings, authentication, and full CRUD flows across a Node/Express API and PostgreSQL.</p>
               <div class="project-tags"><span>React</span><span>Redux</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span></div>
             </div>
-            <a class="project-link" href="https://github.com/YElnadi/Yasbnb" target="_blank" rel="noreferrer">View repository ↗</a>
-          </article>
-
-          <article class="project-card">
-            <div>
-              <span class="project-kicker">AI project</span>
-              <h3>Customer Support AI</h3>
-              <p>An AI-focused application exploring conversational customer-support experiences and practical integration of modern language-model tooling into a web product.</p>
-              <div class="project-tags"><span>AI</span><span>JavaScript</span><span>Web App</span><span>LLM Integration</span></div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/YElnadi/Yasbnb" target="_blank" rel="noreferrer">View repository ↗</a>
             </div>
-            <a class="project-link" href="https://github.com/YElnadi/customer-support-ai" target="_blank" rel="noreferrer">View repository ↗</a>
-          </article>
-
-          <article class="project-card">
-            <div>
-              <span class="project-kicker">AI experiment</span>
-              <h3>Gemini Chatbot</h3>
-              <p>A hands-on exploration of Google Gemini models and prompt-driven conversational experiences using JavaScript and the Gemini API.</p>
-              <div class="project-tags"><span>Gemini</span><span>JavaScript</span><span>Generative AI</span><span>API Integration</span></div>
-            </div>
-            <a class="project-link" href="https://github.com/YElnadi/Gemini_Chatbot" target="_blank" rel="noreferrer">View repository ↗</a>
           </article>
         </div>
       </div>
@@ -493,28 +575,38 @@
       <div class="shell experience-grid">
         <div>
           <p class="eyebrow">Experience & growth</p>
-          <h2>Building, teaching, and learning.</h2>
+          <h2>Researching, building, and teaching.</h2>
         </div>
         <div class="timeline">
           <article class="timeline-item">
-            <h3>Software Developer</h3>
-            <div class="timeline-meta">Independent projects · Full-stack & AI</div>
-            <p>Building web applications across React, Node, Python, databases, APIs, testing, and AI-powered workflows.</p>
+            <h3>AI Code Trainer & Evaluator</h3>
+            <div class="timeline-meta">Outlier · Remote contract · 2025 – 2026</div>
+            <p>Evaluated and ranked LLM-generated Python and JavaScript code for correctness, efficiency, and instruction-following, and wrote detailed feedback and corrected solutions used to train models.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>AI Fellow</h3>
+            <div class="timeline-meta">Headstarter AI · 2024</div>
+            <p>Built and shipped LLM-powered web apps with the OpenAI and Gemini APIs in a fast-paced fellowship focused on shipping and experimentation.</p>
           </article>
           <article class="timeline-item">
             <h3>Coding Instructor</h3>
-            <div class="timeline-meta">Coding With Kids · Woodinville Montessori School</div>
-            <p>Taught young learners core coding concepts through approachable, hands-on programming activities and projects.</p>
+            <div class="timeline-meta">Coding with Kids · Woodinville Montessori School · Aug – Dec 2024</div>
+            <p>Taught Python and Scratch fundamentals to elementary students through hands-on projects, in person and online.</p>
           </article>
           <article class="timeline-item">
-            <h3>AI Fellowship</h3>
-            <div class="timeline-meta">Headstarter AI</div>
-            <p>Built AI-focused projects in a fast-paced fellowship environment centered on shipping, experimentation, and product thinking.</p>
+            <h3>Full-Stack Software Engineering Program</h3>
+            <div class="timeline-meta">App Academy · 2022 – 2023</div>
+            <p>1,000+ hour program covering data structures and algorithms, databases, and building and deploying full-stack applications.</p>
           </article>
           <article class="timeline-item">
-            <h3>Software Engineering Training</h3>
-            <div class="timeline-meta">App Academy</div>
-            <p>Completed intensive full-stack software engineering training covering modern JavaScript, React, backend development, databases, and deployment fundamentals.</p>
+            <h3>M.S., Electronics & Communications Engineering</h3>
+            <div class="timeline-meta">The American University in Cairo · 2019 – 2022</div>
+            <p>Thesis research on fault tolerance in networked control systems; three peer-reviewed publications.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Graduate Teaching Assistant</h3>
+            <div class="timeline-meta">Misr International University & The American University in Cairo · 2016 – 2019</div>
+            <p>Taught labs in Electric Circuits, Digital Logic Design, and C/C++ programming.</p>
           </article>
         </div>
       </div>
@@ -526,10 +618,11 @@
           <div>
             <p class="eyebrow" style="color:#d4e2de">Let’s connect</p>
             <h2>Interested in working together?</h2>
-            <p>I’m always interested in thoughtful software, product, and engineering opportunities where I can keep building and growing.</p>
+            <p>I’m looking for research and engineering roles where I can help make AI systems more reliable, and I’m happy to talk about fellowships, projects, and opportunities.</p>
           </div>
           <div class="contact-actions">
-            <a class="button primary" href="https://www.linkedin.com/in/yaselnadi" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="button primary" href="mailto:yaselnadi@gmail.com">Email me</a>
+            <a class="button" href="https://www.linkedin.com/in/yaselnadi" target="_blank" rel="noreferrer">LinkedIn ↗</a>
             <a class="button" href="https://github.com/YElnadi" target="_blank" rel="noreferrer">GitHub ↗</a>
           </div>
         </div>
