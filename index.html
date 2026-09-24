@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +88,20 @@
       color: white;
     }
     .button:hover { transform: translateY(-2px); }
+    .email-btn { position: relative; }
+    .email-btn.copied::after {
+      content: "Copied!";
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 8px);
+      transform: translateX(-50%);
+      background: var(--ink);
+      color: white;
+      font-size: .8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
 
     .hero {
       min-height: 78vh;
@@ -399,7 +415,7 @@
           <div class="hero-actions">
             <a class="button primary" href="#work">View selected work ↓</a>
             <a class="button" href="Yasmine_Elnadi_Resume.pdf" target="_blank" rel="noreferrer">Download résumé</a>
-            <a class="button" href="mailto:yaselnadi@gmail.com">Email me</a>
+            <a class="button email-btn" href="mailto:yaselnadi@gmail.com" data-email="yaselnadi@gmail.com">✉ yaselnadi@gmail.com</a>
           </div>
         </div>
         <div class="portrait-wrap">
@@ -621,7 +637,7 @@
             <p>I’m looking for research and engineering roles where I can help make AI systems more reliable, and I’m happy to talk about fellowships, projects, and opportunities.</p>
           </div>
           <div class="contact-actions">
-            <a class="button primary" href="mailto:yaselnadi@gmail.com">Email me</a>
+            <a class="button primary email-btn" href="mailto:yaselnadi@gmail.com" data-email="yaselnadi@gmail.com">✉ yaselnadi@gmail.com</a>
             <a class="button" href="https://www.linkedin.com/in/yaselnadi" target="_blank" rel="noreferrer">LinkedIn ↗</a>
             <a class="button" href="https://github.com/YElnadi" target="_blank" rel="noreferrer">GitHub ↗</a>
           </div>
@@ -636,5 +652,19 @@
       <span>Designed & built with care.</span>
     </div>
   </footer>
+  <script>
+    // Copy the email address on click (mail apps often aren't set up), while still trying to open one.
+    document.querySelectorAll('.email-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var email = btn.dataset.email;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(email).then(function () {
+            btn.classList.add('copied');
+            setTimeout(function () { btn.classList.remove('copied'); }, 1800);
+          }).catch(function () {});
+        }
+      });
+    });
+  </script>
 </body>
 </html>
